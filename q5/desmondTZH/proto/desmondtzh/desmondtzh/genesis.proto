@@ -1,0 +1,17 @@
+syntax = "proto3";
+package desmondtzh.desmondtzh;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "desmondtzh/desmondtzh/params.proto";
+
+option go_package = "desmondTZH/x/desmondtzh/types";
+
+// GenesisState defines the desmondtzh module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
