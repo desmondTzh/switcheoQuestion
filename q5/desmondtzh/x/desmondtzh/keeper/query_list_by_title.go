@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"context"
+	"strings"
 
 	"cosmossdk.io/store/prefix"
 	"github.com/cosmos/cosmos-sdk/runtime"
@@ -12,8 +13,8 @@ import (
 	"desmondtzh/x/desmondtzh/types"
 )
 
-func (k Keeper) ListPost(ctx context.Context, req *types.QueryListPostRequest) (*types.QueryListPostResponse, error) {
-	if req == nil {
+func (k Keeper) ListByTitle(ctx context.Context, req *types.QueryListByTitleRequest) (*types.QueryListByTitleResponse, error) {
+if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
@@ -26,8 +27,9 @@ func (k Keeper) ListPost(ctx context.Context, req *types.QueryListPostRequest) (
 		if err := k.cdc.Unmarshal(value, &post); err != nil {
 			return err
 		}
-
-		posts = append(posts, post)
+        if strings.Contains(post.Title, req.Title) {
+            posts = append(posts, post)
+        }
 		return nil
 	})
 
@@ -35,5 +37,5 @@ func (k Keeper) ListPost(ctx context.Context, req *types.QueryListPostRequest) (
 		return nil, status.Error(codes.Internal, err.Error())
 	}
 
-	return &types.QueryListPostResponse{Post: posts, Pagination: pageRes}, nil
+	return &types.QueryListByTitleResponse{Post: posts, Pagination: pageRes}, nil
 }

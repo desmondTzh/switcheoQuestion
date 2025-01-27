@@ -31,6 +31,13 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{},
 				},
 
+				{
+					RpcMethod:      "ListByTitle",
+					Use:            "list-by-title [title]",
+					Short:          "Query list-by-title",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "title"}},
+				},
+
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
