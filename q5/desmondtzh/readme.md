@@ -1,6 +1,8 @@
 # desmondtzh
 **desmondtzh** is a blockchain built using Cosmos SDK and Tendermint and created with [Ignite CLI](https://ignite.com/cli).
 
+## Consensus-breaking changes
+I'm not proficient in blockchain development, so i cant introduce any consensus-breaking changes. But if I was to work on changes to what i know on the blockchain world, I would aim to make the process faster, with a transaction requiring over a extended period of time to happen, it would make blockchain changes not visible in the only day-to-day live, thus aiming to reduce the time taken for a transaction to happen would greatly benefit the blockchain world. 
 ## Commands
 
 `./desmondtzhd q desmondtzh create-post "XXXX" "YYYY" --from alice` create post with title `XXXX` and body of `YYYY`.
