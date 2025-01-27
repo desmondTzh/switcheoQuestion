@@ -1,6 +1,20 @@
 # desmondtzh
 **desmondtzh** is a blockchain built using Cosmos SDK and Tendermint and created with [Ignite CLI](https://ignite.com/cli).
 
+## Commands
+
+`./desmondtzhd q desmondtzh create-post "XXXX" "YYYY" --from alice` create post with title `XXXX` and body of `YYYY`.
+
+`./desmondtzhd q desmondtzh show-post 0` show the 0th post.
+
+`./desmondtzhd q desmondtzh list-by-title XXXX` get post with title with 'XXXX' text.
+
+`./desmondtzhd q desmondtzh list-post` show all posts.
+
+`./desmondtzhd q desmondtzh update-post "AAAA" "BBBBB" 0 --from alice` update the 0th post with title `AAAA` and body of 'BBBB'.
+
+`./desmondtzhd q desmondtzh delete-post 0 --from alice` delete the 0th post.
+
 ## Get started
 
 ```
